@@ -1,0 +1,37 @@
+.contactForm {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 15px 15px;
+  border: 2px solid black;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.usernameInput {
+  margin-top: 5px;
+}
+
+.numberLabel {
+  margin-top: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nameLabel {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.phoneInput {
+  margin-top: 5px;
+}
+
+.addContactBtn {
+  width: 90px;
+  margin: 10px auto 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.error {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: red;
+}
