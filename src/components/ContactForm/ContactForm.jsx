@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 import css from "./ContactForm.module.css";
 
 export default function ContactForm() {
@@ -17,7 +17,7 @@ export default function ContactForm() {
       .max(50, " *Too long"),
     number: Yup.string()
       .required("* Required")
-      .matches(/^\d{3}-\d{2}-\d{2}$/, " *Invalid phone number format"),
+      .matches(/^\d{3}-\d{3}-\d{4}$/, " *Invalid phone number format"),
   });
 
   return (
@@ -25,13 +25,7 @@ export default function ContactForm() {
       initialValues={{ name: "", number: "" }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm }) => {
-        dispatch(
-          addContact({
-            id: Date.now().toString(),
-            name: values.name,
-            number: values.number,
-          })
-        );
+        dispatch(addContact(values));
         resetForm();
       }}
     >

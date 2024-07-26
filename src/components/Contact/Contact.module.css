@@ -22,7 +22,7 @@ p {
 }
 
 .contactCard {
-  width: 250px;
+  width: calc((100% - 45px) / 4);
   padding: 10px;
   display: flex;
   justify-content: space-between;
