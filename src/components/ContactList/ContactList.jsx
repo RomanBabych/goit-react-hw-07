@@ -4,15 +4,11 @@ import {
   selectLoading,
   selectError,
 } from "../../redux/contactsSlice";
-import { selectNameFilter } from "../../redux/filtersSlice";
 import Contact from "../Contact/Contact";
 import css from "./ContactList.module.css";
 
 export default function ContactList() {
-  const filter = useSelector(selectNameFilter);
-  const contacts = useSelector((state) =>
-    selectFilteredContacts(state, filter)
-  );
+  const contacts = useSelector(selectFilteredContacts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
